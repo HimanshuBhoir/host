@@ -14,7 +14,7 @@ function Signin() {
   const [password,setPassword] = useState("")
 
   const PostData = () => {
-    fetch("http://localhost:5000/signin",{
+    fetch("/signin",{
       method:"post",
       headers:{
         "Content-Type":"application/json"

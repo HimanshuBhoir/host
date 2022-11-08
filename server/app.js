@@ -1,12 +1,13 @@
 const express = require('express')
-const cors = require('cors')
+// const cors = require('cors')
+const PORT = process.env.PORT || 5000
 const app = express()
-app.use(cors({
-        origin: "*"
-    })
-)
+// app.use(cors({
+        // origin: "*"
+    // })
+// )
 const mongoose = require('mongoose')
-const {MONGOURI} = require('./keys')
+const {MONGOURI} = require('./config/keys')
 
 
 // db schema - user
@@ -32,10 +33,14 @@ mongoose.connection.on('error',(err) =>{
 })
 
 
-app.get('/', (req, res) => {
-    res.send("hello world")
-})
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static('client/build'))
+    const path = require('path')
+    app.get("*",(req,res) => {
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
 
-app.listen(5000,() => {
+app.listen(PORT,() => {
     console.log("server is running")
 })

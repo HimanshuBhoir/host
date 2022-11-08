@@ -20,7 +20,7 @@ function Sidebar() {
 
   const fetchUsers = (query) => {
     setSearch(query)
-    fetch('http://localhost:5000/search-user', {
+    fetch('/search-user', {
       method: "post",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ function Trending() {
   const [cmnt, showCmnt] = useState(false)
   const {state, dispatch} = useContext(UserContext) 
   useEffect(()=>{
-    fetch('http://localhost:5000/trendpost',{
+    fetch('/trendpost',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }
@@ -23,7 +23,7 @@ function Trending() {
   },[])
 
   const likedPost = (id) =>{
-    fetch('http://localhost:5000/like',{
+    fetch('/like',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -47,7 +47,7 @@ function Trending() {
   }
 
   const unlikedPost = (id) =>{
-    fetch('http://localhost:5000/unlike',{
+    fetch('/unlike',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -71,7 +71,7 @@ function Trending() {
   }
 
   const makeComment =(text, postedById) =>{
-    fetch('http://localhost:5000/comment',{
+    fetch('/comment',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -98,7 +98,7 @@ function Trending() {
   }
 
   const deletePost = (postid) => {
-    fetch(`http://localhost:5000/deletepost/${postid}`,{
+    fetch(`/deletepost/${postid}`,{
       method: "delete",
       headers:{
         Authorization:"Bearer " + localStorage.getItem("jwt")

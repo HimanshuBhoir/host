@@ -26,7 +26,7 @@ function Explore() {
 
   const fetchUsers = (query) => {
     setSearch(query)
-    fetch('http://localhost:5000/search-user',{
+    fetch('/search-user',{
       method: "post",
       headers:{
         "Content-Type":"application/json",
@@ -42,7 +42,7 @@ function Explore() {
   }
 
   useEffect(()=>{
-    fetch('http://localhost:5000/allpost',{
+    fetch('/allpost',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }
@@ -54,7 +54,7 @@ function Explore() {
   },[])
 
   const likedPost = (id) =>{
-    fetch('http://localhost:5000/like',{
+    fetch('/like',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -78,7 +78,7 @@ function Explore() {
   }
 
   const unlikedPost = (id) =>{
-    fetch('http://localhost:5000/unlike',{
+    fetch('/unlike',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -102,7 +102,7 @@ function Explore() {
   }
 
   const makeComment =(text, postedById) =>{
-    fetch('http://localhost:5000/comment',{
+    fetch('/comment',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -129,7 +129,7 @@ function Explore() {
   }
 
   const deletePost = (postid) => {
-    fetch(`http://localhost:5000/deletepost/${postid}`,{
+    fetch(`/deletepost/${postid}`,{
       method: "delete",
       headers:{
         Authorization:"Bearer " + localStorage.getItem("jwt")

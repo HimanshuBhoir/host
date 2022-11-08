@@ -13,7 +13,7 @@ function Recommends() {
 useEffect(()=>{
     if(state){
       return(
-        fetch('http://localhost:5000/allposts',{
+        fetch('/allposts',{
           headers:{
             "Authorization":"Bearer "+localStorage.getItem("jwt")
           }

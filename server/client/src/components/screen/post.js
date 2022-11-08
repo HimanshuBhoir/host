@@ -34,7 +34,7 @@ function Issue() {
       console.log(err)
     })
 
-    fetch("http://localhost:5000/createpost",{
+    fetch("/createpost",{
       method:"post",
       headers:{
         "Content-Type":"application/json",

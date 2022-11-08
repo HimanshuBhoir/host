@@ -8,7 +8,7 @@ function Recom() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    fetch('http://localhost:5000/recom',{
+    fetch('/recom',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }
