@@ -44,9 +44,9 @@ function Signin() {
 
 
   return (
-    <section className="signin" style={{textAlign:"center",width:"50vw", height:"fit-content", border:"none"}}>
+    <section className="signin" style={{width:"50vw", height:"fit-content", border:"none"}}>
               
-              <div className='logo'>
+              <div className='logo' style={{textAlign:"center"}}>
                 <i className='large material-icons' style={{ fontSize: "60px", color: "#1DA1F2" }}>pan_tool</i>
                 <br/>
                 <text style={{ fontSize: "20px", color: "#1DA1F2" }}>Login to Rais-IT</text>
