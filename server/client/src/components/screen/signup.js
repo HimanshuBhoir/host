@@ -86,7 +86,7 @@ function Signup() {
   }
 
   return (
-    <section className="signup" style={{height:"fit-content", border:"none"}}>
+    <section className="signup" style={{textAlign:"center",height:"fit-content", border:"none"}}>
         
         <div className='logo'>
                 <i className='large material-icons' style={{ fontSize: "60px", color: "#1DA1F2" }}>pan_tool</i>
