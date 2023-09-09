@@ -14,7 +14,7 @@ function Signin() {
   const [password,setPassword] = useState("")
 
   const PostData = () => {
-    fetch("/signin",{
+    fetch("https://raise-it-1li7.onrender.com/signin",{
       method:"post",
       headers:{
         "Content-Type":"application/json"

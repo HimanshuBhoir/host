@@ -8,7 +8,7 @@ function Recom() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    fetch('/recom',{
+    fetch('https://raise-it-1li7.onrender.com/recom',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }

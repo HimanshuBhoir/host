@@ -13,7 +13,7 @@ function Recommends() {
 useEffect(()=>{
     if(state){
       return(
-        fetch('/allposts',{
+        fetch('https://raise-it-1li7.onrender.com/allposts',{
           headers:{
             "Authorization":"Bearer "+localStorage.getItem("jwt")
           }

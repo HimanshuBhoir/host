@@ -11,7 +11,7 @@ function Trending() {
   const [cmnt, showCmnt] = useState(false)
   const {state, dispatch} = useContext(UserContext) 
   useEffect(()=>{
-    fetch('/trendpost',{
+    fetch('https://raise-it-1li7.onrender.com/trendpost',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }
@@ -23,7 +23,7 @@ function Trending() {
   },[])
 
   const likedPost = (id) =>{
-    fetch('/like',{
+    fetch('https://raise-it-1li7.onrender.com/like',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -47,7 +47,7 @@ function Trending() {
   }
 
   const unlikedPost = (id) =>{
-    fetch('/unlike',{
+    fetch('https://raise-it-1li7.onrender.com/unlike',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -71,7 +71,7 @@ function Trending() {
   }
 
   const makeComment =(text, postedById) =>{
-    fetch('/comment',{
+    fetch('https://raise-it-1li7.onrender.com/comment',{
       method: "put",
       headers:{
         "Content-Type":"application/json",
@@ -98,7 +98,7 @@ function Trending() {
   }
 
   const deletePost = (postid) => {
-    fetch(`/deletepost/${postid}`,{
+    fetch(`https://raise-it-1li7.onrender.com/deletepost/${postid}`,{
       method: "delete",
       headers:{
         Authorization:"Bearer " + localStorage.getItem("jwt")
